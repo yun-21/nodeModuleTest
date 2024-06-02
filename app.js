@@ -40,6 +40,7 @@ const server = http.createServer((req, res) => {
     let ext = fileUtils.getFileExtension(filePath);
     let contentType = fileUtils.getContentType(ext);
     res.writeHead(200, { contentType });
+    //check()함수가 실행되며 서버를 껐다 키지 않는 이상 행운의 컬러가 바뀌지않음
     const htmlcontent = `
           <!DOCTYPE html>
           <html lang="en">
