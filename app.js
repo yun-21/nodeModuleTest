@@ -36,12 +36,7 @@ const fileUtils = {
     }
 }
 
-const server = http.createServer((req, res) => {
-    let filePath = fileUtils.getFilePath(req.url);
-    let ext = fileUtils.getFileExtension(filePath);
-    let contentType = fileUtils.getContentType(ext);
-    res.writeHead(200, { contentType });
-    const a = luck.getColor();
+const a = luck.getColor();
     function check() {
         if (a === "빨간색") {
             b = `<h2 style="color:red">${a}<span style="color:black">입니다!</span></h2>`
@@ -63,6 +58,13 @@ const server = http.createServer((req, res) => {
         }
         return b
     }
+
+const server = http.createServer((req, res) => {
+    let filePath = fileUtils.getFilePath(req.url);
+    let ext = fileUtils.getFileExtension(filePath);
+    let contentType = fileUtils.getContentType(ext);
+    res.writeHead(200, { contentType });
+    
 
     const htmlcontent = `
           <!DOCTYPE html>
