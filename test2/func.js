@@ -1,3 +1,4 @@
+const fs = require('fs');
 function hamsuPrac(names, value) {
     const nameArr = [];
     names.forEach((element) => {
@@ -57,3 +58,6 @@ const names = ["신지윤", "송강", "이종석", "배인혁", "변우석"];
 const value = [312, 376, 374, 352, 380]
 const call = hamsuPrac(names, value)
 console.log(call)
+
+const JsonCall = JSON.stringify(call,null,2);
+fs.writeFileSync("./test2/JsonCall.json",JsonCall);
